@@ -14,14 +14,14 @@ function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
   
     if (numeroDeUsuario === numeroSecreto){
-        asignarTextoElemento ('p', `Felicidades Ganaste en ${intentos} ${(intentos === 1) ? 'Vez': 'Veces' }`);
+        asignarTextoElemento ('p', `What a Smart Carmen you Won in ${intentos} ${(intentos === 1) ? 'Attempt': 'Attempts' }`);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         // EL Usuario No Acerto 
         if (numeroDeUsuario > numeroSecreto){
-            asignarTextoElemento ("p", "El Numero Secreto es Menor");
+            asignarTextoElemento ("p", "Oops! The number is lower. Give it another shot!");
         } else {
-            asignarTextoElemento ('p', 'El Numero Secreto es Mayor');
+            asignarTextoElemento ('p', 'Not quite! Try a higher number');
         }
         intentos ++; 
         limpiarCaja();
@@ -53,8 +53,8 @@ return generaNumeroSecreto();
 }
 
 function condicionesIniciales(){
-asignarTextoElemento ('h1','Juego del Numero Secreto!');
-asignarTextoElemento ("p",`Indica un Numero Entre 1 y ${numeroMaximo}`);
+asignarTextoElemento ('h1','The Secret Number Game!');
+asignarTextoElemento ("p",`Please Enter a number between 1 y ${numeroMaximo}`);
 numeroSecreto= generaNumeroSecreto ();
 intentos = 1;
 }
